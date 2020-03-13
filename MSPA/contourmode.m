@@ -51,9 +51,9 @@ if (nargin < 4) || isempty(dB)
 end
 
 % Compute and plot contours
-c = contourc(x,y,20*log10(abs(transpose(mode))),dB);
+%c = contourc(x,y,20*log10(abs(transpose(mode))),dB);
 
-%c = surf((real(mode)),'linestyle','none');
+c = surf((real(mode)));%,'linestyle','none');
 
 cmap = colormap;
 ii = 1;

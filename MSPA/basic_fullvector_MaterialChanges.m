@@ -22,7 +22,7 @@ dx = 0.0125;        % grid size (horizontal)
 dy = 0.0125;        % grid size (vertical)
 
 lambda = 1.55;      % vacuum wavelength
-nmodes = 10;         % number of modes to compute
+nmodes = 1;         % number of modes to compute
 
 for i=1:10
 [x,y,xc,yc,nx,ny,eps,edges] = waveguidemesh([n1,n2,n3],[h1,h2,h3], ...
@@ -38,12 +38,12 @@ fprintf(1,'neff = %.6f\n',neff);
     
 figure(1);
 subplot(4,5,i);
-contourmode(x,y,Hx(:,:,num_modes));
+contourmode(x,y,Hx);
 title('Hx (TE mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 
 subplot(4,5,i+10);
-contourmode(x,y,Hy(:,:,num_modes));
+contourmode(x,y,Hy);
 title('Hy (TE mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 

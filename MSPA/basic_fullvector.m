@@ -34,16 +34,16 @@ nmodes = 10;         % number of modes to compute
 
 fprintf(1,'neff = %.6f\n',neff);
 
-for num_modes = 1:nmodes
+for n_mode = 1:nmodes
     
 figure(1);
-subplot(121);
-contourmode(x,y,Hx(:,:,num_modes));
+subplot(4,5,n_mode);
+contourmode(x,y,Hx(:,:,n_mode));
 title('Hx (TE mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 
-subplot(122);
-contourmode(x,y,Hy(:,:,num_modes));
+subplot(4,5,n_mode+10);
+contourmode(x,y,Hy(:,:,n_mode));
 title('Hy (TE mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 
@@ -55,13 +55,13 @@ for v = edges, line(v{:}); end
 fprintf(1,'neff = %.6f\n',neff);
 
 figure(2);
-subplot(121);
-contourmode(x,y,Hx(:,:,num_modes));
+subplot(4,5,n_mode);
+contourmode(x,y,Hx(:,:,n_mode));
 title('Hx (TM mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 
-subplot(122);
-contourmode(x,y,Hy(:,:,num_modes));
+subplot(4,5,n_mode+10);
+contourmode(x,y,Hy(:,:,n_mode));
 title('Hy (TM mode)'); xlabel('x'); ylabel('y'); 
 for v = edges, line(v{:}); end
 end
